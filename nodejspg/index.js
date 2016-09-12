@@ -24,8 +24,7 @@ app.get('/', (request, response) => {
 app.get('/users', (request, response) => {
 	const pg = require('pg')  
 	const conString = 'postgres://postgres:Rb5!!!!!@localhost/postgres' // make sure to match your own database's credentials
-
-	  pg.connect(conString, function (err, client, done) {
+	pg.connect(conString, function (err, client, done) {
 		if (err) {
 		  // pass the error to the express error handler
 		  return next(err)
@@ -41,26 +40,13 @@ app.get('/users', (request, response) => {
 			users.Users  = result.rows;
 			response.render('users',users);
 		})
-		
-		/*var query = client.query('SELECT name, age FROM users;')
-		
-		query.on('row', function(row, response) {
-			console.log(row);
-			users.Users.push(row);
-		})
-		
-		query.on("end", function (result) {
-			client.end();
-			console.log(users);			
-			response.render('users',users);
-		});	*/	
-	  }) 
-})
+	}) 
+});
 
 app.listen(port, (err) => {  
   if (err) {
     return console.log('something bad happened', err)
   }
 
-  console.log('server is listening on ${port}')
+  console.log('server is listening on '+port)
 })

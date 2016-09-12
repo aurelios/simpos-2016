@@ -35,7 +35,7 @@ var insertDocument = function(db, callback) {
       }
 	], function(err, result) {
     assert.equal(err, null);
-    console.log("Inserted a document into the restaurants collection.");
+    console.log("Inserted some documents into the users collection.");
     callback();
   });
 };
