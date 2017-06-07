@@ -1,0 +1,17 @@
+{
+  "name": "nodemysql",
+  "version": "1.0.0",
+  "description": "Getting Started",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "node index.js"
+  },
+  "author": "Aurelios",
+  "dependencies": {
+    "express": "4.14.x",
+    "express-handlebars": "3.0.x",
+	"mysql": "0.9.x"
+  },
+  "license": "ISC"
+}
