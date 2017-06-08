@@ -1,4 +1,0 @@
-br\com\tomcatelasticsearch\model\User.class
-br\com\tomcatelasticsearch\RestApplication.class
-br\com\tomcatelasticsearch\ws\UserWS.class
-br\com\tomcatelasticsearch\dao\UserDAO.class
