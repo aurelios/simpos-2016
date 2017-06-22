@@ -1,0 +1,18 @@
+CREATE OR REPLACE FUNCTION public.insertrand(
+	numrows integer)
+    RETURNS void
+    LANGUAGE 'plpgsql'
+    COST 100.0
+    VOLATILE
+AS $function$
+
+
+    DECLARE i INT;
+    BEGIN
+        i := 1;
+        WHILE i < numrows LOOP
+           INSERT INTO public.PERSON (NAME,ID_CITY) VALUES (CONCAT('Person ' , i), TRUNC(((RANDOM() * (99))+1)));
+            i := i + 1;
+        END LOOP;
+    END
+    $function$;

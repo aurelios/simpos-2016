@@ -1,0 +1,34 @@
+use simpos
+
+CREATE TABLE `city` (
+  `ID_CITY` mediumint(8) unsigned NOT NULL auto_increment,
+  `NAME`  varchar(255) unique,
+  PRIMARY KEY (`ID_CITY`)
+) AUTO_INCREMENT=1;
+
+INSERT INTO `city` (`ID_CITY`,`NAME`) VALUES (1,"Gosselies"),(2,"Ottignies-Louvain-la-Neuve"),(3,"Bayreuth"),(4,"Gorinchem"),(5,"Paradise"),(6,"Peterhead"),(7,"Balen"),(8,"Gibsons"),(9,"Lachine"),(10,"Izel"),(11,"Alma"),(12,"Scorrano"),(13,"Arlon"),(14,"Holman"),(15,"Matlock"),(16,"Corby"),(17,"Raj Nandgaon"),(18,"Leganés"),(19,"Erie"),(20,"Terzorio"),(21,"Isla de Maipo"),(22,"Maintal"),(23,"Milton Keynes"),(24,"Rocourt"),(25,"Ancud"),(26,"Putaendo"),(27,"Montpellier"),(28,"Kasteelbrakel"),(29,"Soissons"),(30,"Enschede"),(31,"Turnhout"),(32,"Aurora"),(33,"Uberaba"),(34,"Kapuskasing"),(35,"Torino"),(36,"Vaughan"),(37,"LimerlŽ"),(38,"Gudivada"),(39,"Narbonne"),(40,"San Rafael"),(41,"Reading"),(42,"Roermond"),(43,"Kamalia"),(44,"Bourlers"),(45,"Bangor"),(46,"Caloundra"),(47,"Moncton"),(48,"Bonnyville"),(49,"Ekeren"),(50,"Saint Andr�"),(51,"Lüneburg"),(52,"Vaux-sous-ChŽvremont"),(53,"Neerharen"),(54,"Santa Flavia"),(55,"Jelenia Góra"),(56,"Ternat"),(57,"Villar Pellice"),(58,"Saint-Georges"),(59,"Melsele"),(60,"Norman"),(61,"Burgos"),(62,"Portland"),(63,"Merseburg"),(64,"Coleville Lake"),(65,"Artena"),(66,"D�gelis"),(67,"Owen Sound"),(68,"Woodlands County"),(69,"Ucluelet"),(70,"Abaetetuba"),(71,"Santa Maria a Monte"),(72,"Bonlez"),(73,"Vöcklabruck"),(74,"Ramsel"),(75,"Armadale"),(76,"Piagge"),(77,"Söderhamn"),(78,"Bairnsdale"),(79,"Juseret"),(80,"Norcia"),(81,"Nieuwerkerken"),(82,"Cwmbran"),(83,"Antártica"),(84,"Chandrapur"),(85,"Buckie"),(86,"Gaithersburg"),(87,"Holywell"),(88,"Sheffield"),(89,"Beaumont"),(90,"Kleinmachnow"),(91,"Denver"),(92,"Millet"),(93,"Bihain"),(94,"Aurangabad"),(95,"Monguelfo-Tesido/Welsberg-Taisten"),(96,"Gatineau"),(97,"Olivar"),(98,"Esterzili"),(99,"Beersel"),(100,"Brugge Bruges");
+
+CREATE TABLE `person` (
+  `ID_PERSON` mediumint(8) unsigned NOT NULL auto_increment,
+  `NAME`  varchar(255) unique,
+  `ID_CITY` mediumint default NULL,
+  PRIMARY KEY (`ID_PERSON`)
+) AUTO_INCREMENT=1;
+
+
+drop procedure InsertRand;
+DELIMITER $$
+CREATE PROCEDURE InsertRand(IN NumRows INT)
+    BEGIN
+        DECLARE i INT;
+        SET i = 1;
+        START TRANSACTION;
+        WHILE i < NumRows DO
+            INSERT INTO PERSON (NAME,ID_CITY) VALUES (CONCAT('Person ' , i), ((RAND() * (99))+1));
+            SET i = i + 1;
+        END WHILE;
+        COMMIT;
+    END$$
+DELIMITER ;
+
+CALL InsertRand(1000000);
