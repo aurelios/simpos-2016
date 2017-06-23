@@ -1,13 +1,20 @@
-package br.com.javapostgres.model;
+package br.com.javamysql.model;
 
 /**
- * Created by tqi_agimenes on 21/06/2017.
+ * Created by tqi_agimenes on 23/06/2017.
  */
-public class Person {
+public class City {
 
 	public Long id;
 	public String nome;
-	public City city;
+
+	public City() {
+	}
+
+	public City(Long id, String nome) {
+		this.id = id;
+		this.nome = nome;
+	}
 
 	public Long getId() {
 		return id;
@@ -23,13 +30,5 @@ public class Person {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public City getCity() {
-		return city;
-	}
-
-	public void setCity(City city) {
-		this.city = city;
 	}
 }

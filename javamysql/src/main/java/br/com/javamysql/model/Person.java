@@ -7,7 +7,7 @@ public class Person {
 
 	public Long id;
 	public String nome;
-	public Integer cidade;
+	public City city;
 
 	public Long getId() {
 		return id;
@@ -25,11 +25,11 @@ public class Person {
 		this.nome = nome;
 	}
 
-	public Integer getCidade() {
-		return cidade;
+	public City getCity() {
+		return city;
 	}
 
-	public void setCidade(Integer cidade) {
-		this.cidade = cidade;
+	public void setCity(City city) {
+		this.city = city;
 	}
 }
