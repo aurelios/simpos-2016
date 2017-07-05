@@ -5,6 +5,7 @@ package br.com.javapostgres.model;
  */
 public class Person {
 
+
 	public Long id;
 	public String nome;
 	public City city;
