@@ -1,0 +1,6 @@
+tomcatelasticsearch/target
+javamysql/target
+javapostgres/target
+nodejselasticsearch/node_modules
+nodejsmongodb/node_modules
+nodesmysql/node_modules
