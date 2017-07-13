@@ -10,7 +10,7 @@ public class UserConverter {
     public static DBObject toDBObject(User p) {
 
         BasicDBObjectBuilder builder = BasicDBObjectBuilder.start()
-                                                           .append("name", p.getName())
+                                                           .append("id", p.getName())
                                                            .append("age", p.getAge());
         if (p.getId() != null)
             builder = builder.append("_id", new ObjectId(p.getId()));

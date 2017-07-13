@@ -1,7 +1,7 @@
 package br.com.javamysql.ws;
 
 
-import br.com.javamysql.dao.UserDAO;
+import br.com.javamysql.dao.PersonDAO;
 import br.com.javamysql.model.Person;
 
 import javax.ws.rs.GET;
@@ -17,8 +17,8 @@ public class UserWS {
     @GET
     @Path("/getAll")    
     public List<Person> WSChecarVersao() {
-        UserDAO userDAO = new UserDAO();
-        return userDAO.readAllUsers();
+        PersonDAO personDAO = new PersonDAO();
+        return personDAO.readAllUsers();
 
     }
 }

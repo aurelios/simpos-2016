@@ -9,7 +9,7 @@ var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "root",
-  database: "sakila"
+  database: "simpos" 
 });
 
 app.use('/assets', express.static(__dirname + '/assets'));
@@ -29,28 +29,28 @@ app.get('/', (request, response) => {
   })
 })
 
-app.get('/usersrest', (request, response) => {
+app.get('/personrest', (request, response) => {
 	var users = {Users:[]};
 	con.connect(function(err) {
 	  if (err) throw err;
 	  console.log("Connected!");
-	  var sql = "SELECT name, age FROM users";
+	  var sql = "SELECT id_person, name, id_city FROM person";
 	  con.query(sql, function (err, result) {
-		if (err) throw err;
-		console.log(result);
-		users.Users  = result;
+		if (err) throw err;		
+		users.Users  = result;		
 		response.end(JSON.stringify(users));
 	  });
 	});	
 });
 
+/*
 app.get('/users', (request, response) => {
 
 	var users = {Users:[]};
 	con.connect(function(err) {
 	  if (err) throw err;
 	  console.log("Connected!");
-	  var sql = "SELECT name, age FROM users";
+	  var sql = "SELECT name, age FROM person";
 	  con.query(sql, function (err, result) {
 		if (err) throw err;
 		console.log(result);
@@ -59,6 +59,7 @@ app.get('/users', (request, response) => {
 	  });
 	});
 });
+*/
 
 app.listen(port, (err) => {  
   if (err) {

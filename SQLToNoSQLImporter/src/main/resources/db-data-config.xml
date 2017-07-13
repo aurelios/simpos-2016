@@ -1,0 +1,20 @@
+<dataConfig>
+
+    <dataSource driver="org.postgresql.Driver" url="jdbc:mysql://localhost/simpos" user="root" password="root" batch-size="-1"/>
+   
+    <document>
+       <entity name="person" id="id_person" query="select id_person,name,id_city from person">
+		  <field column="id_person" name="id_person" type="long"/>
+		  <field column="name" name="name" type="string"/>
+           <field column="id_city" name="id_city" type="long"/>
+
+           <entity name="city"  multiValued="true" query="select * from city WHERE id_city='${person.id_city}'">
+               <field name="id_city" column="id_city" type="long" />
+               <field name="name" column="name" type="string" />
+           </entity>
+	   </entity>
+    </document>
+
+
+
+</dataConfig>

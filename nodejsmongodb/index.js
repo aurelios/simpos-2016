@@ -52,14 +52,14 @@ app.get('/usersi', (request, response) => {
 	})	  
 });
 
-app.get('/usersrest', (request, response) => {
+app.get('/personrest', (request, response) => {
 	var users = {Users:[]};
-	var url = 'mongodb://localhost:27017/test';
+	var url = 'mongodb://localhost:27017/admin';
 	MongoClient.connect(url, function(err, db) {
 		assert.equal(null, err);
 		console.log("Connected correctly to server.");
 	  	  
-		db.collection('users').find().toArray(function(err, data) {
+		db.collection('person').find().toArray(function(err, data) {
 			users.Users = data;
 			console.log(data);
 			db.close();

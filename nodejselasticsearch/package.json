@@ -1,5 +1,5 @@
 {
-  "name": "demo",
+  "name": "nodejselasticsearch",
   "version": "1.0.0",
   "description": "Getting Started",
   "main": "index.js",
@@ -10,8 +10,8 @@
   "author": "Aurelios",
   "license": "ISC",
   "dependencies": {
-    "mongodb": "^2.2.9",
 	"express": "4.14.x",
-    "express-handlebars": "3.0.x"
+    "express-handlebars": "3.0.x",
+	"mysql": "2.5.4"
   }  
 }
