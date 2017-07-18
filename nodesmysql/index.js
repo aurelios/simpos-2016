@@ -23,23 +23,42 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs')
 app.set('views', path.join(__dirname, 'views'))
 
-app.get('/', (request, response) => {
+app.get('/', function(request, response) {
   response.render('home', {
     name: 'John'
   })
 })
 
-app.get('/personrest', (request, response) => {
-	var users = {Users:[]};
+app.get('/personrest', function(request, response) {
+	var personArray = [];
+	var documents = [];
 	con.connect(function(err) {
-	  if (err) throw err;
-	  console.log("Connected!");
+	  if (err) throw err; 
+	  
+	  var citys = [];
+	  var sqlCity = "SELECT id_city, name FROM city ";
+	  con.query(sqlCity, function (err, result) {
+		if (err) throw err2;
+		citys = result;
+	  
 	  var sql = "SELECT id_person, name, id_city FROM person";
-	  con.query(sql, function (err, result) {
-		if (err) throw err;		
-		users.Users  = result;		
-		response.end(JSON.stringify(users));
-	  });
+		  con.query(sql, function (err, result) {
+			if (err) throw err;		
+			personArray  = result;
+			
+			 personArray.forEach(function (entry) {
+					var person = JSON.parse(JSON.stringify(entry));
+
+					citys.forEach(function (city) {
+						if (city && city.id_city === person.id_city)
+							person.city = JSON.parse(JSON.stringify(city));
+					});
+					documents.push(person);
+			 });
+			
+			response.end(JSON.stringify(documents));
+		  });
+		 }); 
 	});	
 });
 
@@ -61,7 +80,7 @@ app.get('/users', (request, response) => {
 });
 */
 
-app.listen(port, (err) => {  
+app.listen(port, function(err) {  
   if (err) {
     return console.log('something bad happened', err)
   }
