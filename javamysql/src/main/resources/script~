@@ -22,7 +22,6 @@ CREATE PROCEDURE InsertRand(IN NumRows INT)
         DECLARE i INT;
         DECLARE city INT;
         SET i = 1;
-	SET city = 1;
         START TRANSACTION;
         WHILE i < NumRows DO
 			IF city > 100 THEN
