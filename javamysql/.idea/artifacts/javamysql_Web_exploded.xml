@@ -31,7 +31,7 @@
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.12" />
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-jaxrs:1.9.12" />
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-xc:1.9.12" />
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:6.0.6" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.21" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="javamysql/web/Web" />

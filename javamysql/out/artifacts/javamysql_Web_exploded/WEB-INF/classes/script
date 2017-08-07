@@ -22,12 +22,13 @@ CREATE PROCEDURE InsertRand(IN NumRows INT)
         DECLARE i INT;
         DECLARE city INT;
         SET i = 1;
+	SET city = 1;
         START TRANSACTION;
         WHILE i < NumRows DO
 			IF city > 100 THEN
 				SET city = 1;
 			END IF;
-            INSERT INTO PERSON (NAME,ID_CITY) VALUES (CONCAT('Person ' , i), city);
+            INSERT INTO person (NAME,ID_CITY) VALUES (CONCAT('Person ' , i), city);
             SET city = city + 1;
             SET i = i + 1;
         END WHILE;
