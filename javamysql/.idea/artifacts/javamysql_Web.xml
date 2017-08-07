@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="javamysql:Web">
+    <output-path>$PROJECT_DIR$/out/artifacts/javamysql_Web</output-path>
+    <root id="archive" name="javamysql_Web.war">
+      <element id="artifact" artifact-name="javamysql:Web exploded" />
+    </root>
+  </artifact>
+</component>
