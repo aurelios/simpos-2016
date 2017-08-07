@@ -1,7 +1,7 @@
-const path = require('path');
-const exphbs = require('express-handlebars');
-const express = require('express');
-const app = express();
+const path = require('path')  
+const exphbs = require('express-handlebars')
+const express = require('express')
+const app = express()
 const port = 3000
 
 var mysql = require('mysql');
@@ -17,10 +17,7 @@ var con = mysql.createPool({
 	user: "root",
 	password: "root",
 	database: "simpos" ,
-	connectionLimit : 10000,
-	connectTimeout  : 60 * 60 * 100,
-    aquireTimeout   : 60 * 60 * 100,
-    timeout         : 60 * 60 * 100,
+	connectionLimit : 100
 });
 
 
@@ -44,61 +41,44 @@ app.get('/', function(request, response) {
 
 
 app.get('/personrest', function(request, response) {
+	var personArray = [];
+	var documents = [];	  
+	var citys = [];
+	var sqlCity = "SELECT id_city, name FROM city ";
 	
-	getPerson(function (result){
-		response.writeHead(200, {'Content-Type' : 'x-application/json'});
-		response.end(result);
-	});
-		  
-/*
-	try { 
-		con.getConnection(function(err2,connection){
-			if (err2) { throw err2;} 
-			var sql = "SELECT id_person, name, id_city FROM person where id_person < 500000;"
-			connection.query(sql, function (err, result) {
-				connection.release();
-				if (err) { throw err;} 
-				else { 
-					response.writeHead(200, {'Content-Type' : 'x-application/json'});
-					response.end(JSON.stringify(result));
-				}
-			});
-		});
-	} catch(e){ 
-		console.log(e);
-	}
-	*/
+console.log("init");
+getPerson(function (result){
+console.log("connected");
+	 response.writeHead(200, {
+                'Content-Type' : 'x-application/json'
+            });
+response.end(result);
+
 });
-
-
-function getPerson(callback){
- 	con.getConnection(function(err,connection){
- 		if (err) { 
-			console.log(err);
-			return callback(null);
-		}
-		var sql = "SELECT id_person, name, id_city FROM person where id_person < 500000 order by 1;"
-		connection.query(sql, function (err, result) {
-			connection.release();
-			//console.log(con._freeConnections.indexOf(connection));
-			if (err) { 
-				console.log(err);
-				return callback(null);
-			} else { 
-				callback(JSON.stringify(result));
-			}
-		});
-
-	});
-}
-
-
-	/*
-	con.query(sqlCity, function (err2, result) {
+console.log("end");
+	/*con.query(sqlCity, function (err2, result) {
 		if (err2) console.log(err2);
 		citys = result;*/
+	  
+/*
+con.getConnection(function(err,connection){
+		var sql = "SELECT id_person, name, id_city FROM person where id_person < 500000;"
 
-						/*personArray  = result;
+			connection.query(sql, function (err, result) {
+connection.release();
+				if (err) { console.log(err);} 
+
+			else { 
+
+console.log("connected");
+				
+	 response.writeHead(200, {
+                'Content-Type' : 'x-application/json'
+            });
+response.end(JSON.stringify(result));
+
+			}*/		
+				/*personArray  = result;
 
 				personArray.forEach(function (entry) {
 					var person = JSON.parse(JSON.stringify(entry));
@@ -112,6 +92,40 @@ function getPerson(callback){
 
 			//response.end(JSON.stringify(documents));
 		//});
+
+
+
+//});
+	//});
+	
+});
+
+
+function getPerson(callback){
+
+ con.getConnection(function(err,connection){
+		var sql = "SELECT id_person, name, id_city FROM person where id_person < 500000;"
+
+			connection.query(sql, function (err, result) {
+connection.release();
+				if (err) { console.log(err);
+callback(null);} 
+
+			else { 
+
+console.log("connected 2");
+				
+
+callback(JSON.stringify(result));
+
+			}	
+
+});
+
+});
+
+
+}
 
 /*
 app.get('/users', (request, response) => {
