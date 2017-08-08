@@ -42,13 +42,13 @@ public class PersonDAO {
                 p.setCity(new City(rs.getLong(3),rs.getString(4)));
                 personsList.add(p);
             }
-
+            rs.close();
+            stmt.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
         }
-
         return personsList;
     }
 
