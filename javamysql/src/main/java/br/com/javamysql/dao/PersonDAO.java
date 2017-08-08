@@ -34,12 +34,12 @@ public class PersonDAO {
         List<Person> personsList = new ArrayList<Person>();
         try {
             stmt = this.getConnection().createStatement();
-            rs = stmt.executeQuery("SELECT p.id_person, p.name, p.id_city, c.name FROM person p, city c where p.id_city = c.id_city");
+            rs = stmt.executeQuery("SELECT p.id_person, p.name, p.id_city, FROM person p");
             while (rs.next()) {
                 Person p = new Person();
                 p.setId(rs.getLong(1));
                 p.setNome(rs.getString(2));
-                p.setCity(new City(rs.getLong(3),rs.getString(4)));
+                p.setCity(rs.getLong(3));
                 personsList.add(p);
             }
             rs.close();
