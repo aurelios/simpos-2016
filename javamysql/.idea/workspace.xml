@@ -27,7 +27,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserWS.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserWS.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/com/javamysql/ws/UserWS.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -66,15 +66,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonDAO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PersonDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/com/javamysql/dao/PersonDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="41" column="38" lean-forward="false" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+            <state relative-caret-position="51">
+              <caret line="36" column="73" lean-forward="false" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1502223279013" expanded="true" signature="1277:1284" ph="SELECT * FRO... person" />
-                <marker date="1502223279013" expanded="true" signature="1277:1329" ph="SELECT p.id_... person" />
+                <marker date="1502223595298" expanded="true" signature="1277:1284" ph="SELECT * FRO... person" />
+                <marker date="1502223595298" expanded="true" signature="1277:1328" ph="SELECT p.id_... person" />
               </folding>
             </state>
           </provider>
@@ -1191,12 +1191,12 @@
       <workItem from="1499693350723" duration="1799000" />
       <workItem from="1499958330217" duration="44000" />
       <workItem from="1502125026800" duration="3762000" />
-      <workItem from="1502196370695" duration="6886000" />
+      <workItem from="1502196370695" duration="7145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29195000" />
+    <option name="totallyTimeSpent" value="29454000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1209,7 +1209,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1231,7 +1231,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891247" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891247" sideWeight="0.4974293" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891247" sideWeight="0.4974293" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27956298" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1293,8 +1293,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1502223279013" expanded="true" signature="1277:1284" ph="SELECT * FRO... person" />
-            <marker date="1502223279013" expanded="true" signature="1277:1329" ph="SELECT p.id_... person" />
+            <marker date="1502223595298" expanded="true" signature="1277:1284" ph="SELECT * FRO... person" />
+            <marker date="1502223595298" expanded="true" signature="1277:1328" ph="SELECT p.id_... person" />
           </folding>
         </state>
       </provider>
@@ -1374,8 +1374,8 @@
           <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1502223279013" expanded="true" signature="1277:1284" ph="SELECT * FRO... person" />
-            <marker date="1502223279013" expanded="true" signature="1277:1329" ph="SELECT p.id_... person" />
+            <marker date="1502223595298" expanded="true" signature="1277:1284" ph="SELECT * FRO... person" />
+            <marker date="1502223595298" expanded="true" signature="1277:1328" ph="SELECT p.id_... person" />
           </folding>
         </state>
       </provider>
@@ -1455,8 +1455,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1502223279013" expanded="true" signature="1277:1284" ph="SELECT * FRO... person" />
-            <marker date="1502223279013" expanded="true" signature="1277:1329" ph="SELECT p.id_... person" />
+            <marker date="1502223595298" expanded="true" signature="1277:1284" ph="SELECT * FRO... person" />
+            <marker date="1502223595298" expanded="true" signature="1277:1328" ph="SELECT p.id_... person" />
           </folding>
         </state>
       </provider>
@@ -1523,8 +1523,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1502223279013" expanded="true" signature="1277:1284" ph="SELECT * FRO... person" />
-            <marker date="1502223279013" expanded="true" signature="1277:1329" ph="SELECT p.id_... person" />
+            <marker date="1502223595298" expanded="true" signature="1277:1284" ph="SELECT * FRO... person" />
+            <marker date="1502223595298" expanded="true" signature="1277:1328" ph="SELECT p.id_... person" />
           </folding>
         </state>
       </provider>
@@ -1644,14 +1644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -1697,23 +1689,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/javamysql/dao/PersonDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="41" column="38" lean-forward="false" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1502223279013" expanded="true" signature="1277:1284" ph="SELECT * FRO... person" />
-            <marker date="1502223279013" expanded="true" signature="1277:1329" ph="SELECT p.id_... person" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/javamysql/ws/UserWS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/javamysql/dao/PersonDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="36" column="73" lean-forward="false" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1502223595298" expanded="true" signature="1277:1284" ph="SELECT * FRO... person" />
+            <marker date="1502223595298" expanded="true" signature="1277:1328" ph="SELECT p.id_... person" />
+          </folding>
         </state>
       </provider>
     </entry>

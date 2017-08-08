@@ -34,7 +34,7 @@ public class PersonDAO {
         List<Person> personsList = new ArrayList<Person>();
         try {
             stmt = this.getConnection().createStatement();
-            rs = stmt.executeQuery("SELECT p.id_person, p.name, p.id_city, FROM person p");
+            rs = stmt.executeQuery("SELECT p.id_person, p.name, p.id_city FROM person p");
             while (rs.next()) {
                 Person p = new Person();
                 p.setId(rs.getLong(1));
