@@ -10,30 +10,15 @@ import java.util.List;
 
 public class PersonDAO {
 
-    public Connection getConnection(){
-        try {
-            MysqlDataSource dataSource = new MysqlDataSource();
-            dataSource.setUser("root");
-            dataSource.setPassword("root");
-            dataSource.setServerName("localhost");
-            dataSource.setDatabaseName("simpos");
-            dataSource.setURL("jdbc:mysql://localhost/simpos?user=root&password=root&useTimezone=true&serverTimezone=UTC");
-            return dataSource.getConnection();
 
-        } catch (SQLException ex) {
-            System.out.println("SQLException: " + ex.getMessage());
-            System.out.println("SQLState: " + ex.getSQLState());
-            System.out.println("VendorError: " + ex.getErrorCode());
-        }
-        return null;
-    }
 
     public List<Person> readAllUsers() {
         Statement stmt = null;
         ResultSet rs = null;
         List<Person> personsList = new ArrayList<Person>();
         try {
-            stmt = this.getConnection().createStatement();
+            Connection con = DataSource.getConnection();
+            stmt = con.createStatement();
             rs = stmt.executeQuery("SELECT p.id_person, p.name, p.id_city FROM person p");
             while (rs.next()) {
                 Person p = new Person();
@@ -44,6 +29,7 @@ public class PersonDAO {
             }
             rs.close();
             stmt.close();
+            con.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
