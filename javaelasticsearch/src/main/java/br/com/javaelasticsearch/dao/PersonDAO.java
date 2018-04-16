@@ -34,7 +34,9 @@ public class PersonDAO {
         List<SearchHit> searchHits = Arrays.asList(response.getHits().getHits());
         List<Person> results = new ArrayList<Person>();
         List<String> data = new ArrayList<String>();
-        searchHits.forEach(hit -> data.add(hit.getSourceAsString()));
+        for(SearchHit hit: searchHits){
+            data.add(hit.getSourceAsString());
+        }
         return data;
     }
 }

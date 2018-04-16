@@ -20,8 +20,9 @@ public class PersonDAO {
             Connection con = DataSource.getConnection();
             stmt = con.createStatement();
             rs = stmt.executeQuery("SELECT p.id_person, p.name, p.id_city FROM person p");
+            Person p;
             while (rs.next()) {
-                Person p = new Person();
+                p = new Person();
                 p.setId(rs.getLong(1));
                 p.setNome(rs.getString(2));
                 p.setCity(rs.getLong(3));
