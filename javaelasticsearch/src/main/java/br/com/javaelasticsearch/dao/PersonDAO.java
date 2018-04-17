@@ -6,7 +6,7 @@ import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.search.SearchHit;
-import org.elasticsearch.transport.client.PreBuiltTransportClient;
+
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -23,8 +23,9 @@ public class PersonDAO {
                 .build();
         TransportClient client = null;
         try {
-            client = new PreBuiltTransportClient(settings)
-					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("localhost"), 9300));
+            client = TransportClient.builder().build().addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("localhost"), 9300));;
+            //client = new PreBuiltTransportClient(settings)
+              //      .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("localhost"), 9300));
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }

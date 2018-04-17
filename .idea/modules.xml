@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/javamongodb/javamongodb.iml" filepath="$PROJECT_DIR$/javamongodb/javamongodb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SQLToNoSQLImporter/src/main/main.iml" filepath="$PROJECT_DIR$/SQLToNoSQLImporter/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaelasticsearch/src/main/main1.iml" filepath="$PROJECT_DIR$/javaelasticsearch/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javamysql/src/main/main2.iml" filepath="$PROJECT_DIR$/javamysql/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javapostgres/src/main/main3.iml" filepath="$PROJECT_DIR$/javapostgres/src/main/main3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javamongodb/classes/artifacts/tomcatmongodb_Web_exploded/tomcatmongodb_Web_exploded.iml" filepath="$PROJECT_DIR$/javamongodb/classes/artifacts/tomcatmongodb_Web_exploded/tomcatmongodb_Web_exploded.iml" />
+    </modules>
+  </component>
+</project>

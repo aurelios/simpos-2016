@@ -35,13 +35,13 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs')
 app.set('views', path.join(__dirname, 'views'))
 
-app.get('/', (request, response) = > {
+app.get('/', function(request, response)  {
     response.render('home', {
     name: 'John'
 })
 })
 
-app.get('/mysqltoelastic', (request, response) = > {
+app.get('/mysqltoelastic', function(request, response)  {
     var mysql = require('mysql');
 var con = mysql.createConnection({
     host: "localhost",
@@ -93,7 +93,7 @@ con.connect(function (err) {
 })
 ;
 
-app.get('/personrest', (request, response) = > {
+app.get('/personrest', function(request, response)  {
     var users = {Users: []};
 elastic.search({
     index: 'simpos',
@@ -128,7 +128,7 @@ elastic.search({
  });
  });
  */
-app.listen(port, (err) = > {
+app.listen(port, function(err)  {
     if (err) {
         return console.log('something bad happened', err)
     }
