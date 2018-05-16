@@ -24,7 +24,9 @@ ALTER SEQUENCE person_seq RESTART WITH 1;
 
 
 CREATE OR REPLACE FUNCTION public.insertrand(
-	numrows integer)
+	numrows integRREND
+	end
+	e--eer)
     RETURNS void
     LANGUAGE 'plpgsql'
     COST 100.0

@@ -21,7 +21,8 @@ const port = 3000
 var elasticsearch = require('elasticsearch');
 var elastic = new elasticsearch.Client({
     host: 'localhost:9200',
-    log: 'info'
+    log: 'info',
+    requestTimeout: 190000
 });
 
 app.use('/assets', express.static(__dirname + '/assets'));
@@ -104,6 +105,7 @@ elastic.search({
         users.Users[i] = resp.hits.hits[i]._source;
     }
     response.end(JSON.stringify(users));
+
 
 }, function (err) {
     console.log(err.message);

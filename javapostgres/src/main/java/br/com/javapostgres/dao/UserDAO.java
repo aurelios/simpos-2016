@@ -31,7 +31,7 @@ public class UserDAO {
             try {
                 Class.forName("org.postgresql.Driver");
                 connection = DriverManager.getConnection(
-                        "jdbc:postgresql://127.0.0.1:5432/simpos", "postgres", "admin");
+                        "jdbc:postgresql://127.0.0.1:5432/", "postgres", "postgres");
             } catch (SQLException e) {
                 System.out.println("Connection Failed! Check output console");
                 e.printStackTrace();
@@ -53,12 +53,12 @@ public class UserDAO {
         List<Person> personsList = new ArrayList<Person>();
         try {
             stmt = this.getConnection().createStatement();
-            rs = stmt.executeQuery("SELECT p.id_person, p.name, p.id_city, c.name FROM person p, city c where p.id_city = c.id_city");
+            rs = stmt.executeQuery("SELECT p.id_person, p.name, p.id_city FROM person p");
             while (rs.next()) {
                 Person p = new Person();
                 p.setId(rs.getLong(1));
                 p.setNome(rs.getString(2));
-                p.setCity(new City(rs.getLong(3),rs.getString(4)));
+                p.setCity(rs.getLong(3)/*new City(rs.getLong(3),rs.getString(4))*/);
                 personsList.add(p);
             }
 

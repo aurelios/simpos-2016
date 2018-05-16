@@ -21,20 +21,19 @@ app.get('/', (request, response) => {
   })
 })
 
-app.get('/usersrest', (request, response) => {
+app.get('/personrest', (request, response) => {
 	const pg = require('pg')  
-	const conString = 'postgres://postgres:Rb5!!!!!@localhost/postgres' // make sure to match your own database's credentials
+	const conString = 'postgres://postgres:postgres@localhost/postgres' // make sure to match your own database's credentials
 	pg.connect(conString, function (err, client, done) {
 		if (err) {
-		  // pass the error to the express error handler
-		  return next(err)
+		  console.log(err);
 		}	
 		
 		var users = {Users:[]};
-		client.query('SELECT name, age FROM users;', [], function (err, result) {
+		client.query('SELECT id_person, name, id_city FROM person;', [], function (err, result) {
 			done()
 			if (err) {
-			// pass the error to the express error handler
+			console.log(err);
 			return next(err)
 			}
 			users.Users  = result.rows;

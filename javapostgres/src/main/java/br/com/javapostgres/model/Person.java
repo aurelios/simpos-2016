@@ -8,7 +8,7 @@ public class Person {
 
 	public Long id;
 	public String nome;
-	public City city;
+	public Long city;
 
 	public Long getId() {
 		return id;
@@ -26,11 +26,11 @@ public class Person {
 		this.nome = nome;
 	}
 
-	public City getCity() {
+	public Long getCity() {
 		return city;
 	}
 
-	public void setCity(City city) {
+	public void setCity(Long city) {
 		this.city = city;
 	}
 }

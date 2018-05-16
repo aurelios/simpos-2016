@@ -8,10 +8,10 @@
 		  <field column="name" name="name" type="string"/>
            <field column="id_city" name="id_city" type="long"/>
 
-           <entity name="city"  multiValued="true" query="select * from city WHERE id_city='${person.id_city}'">
+          <!-- <entity name="city"  multiValued="true" query="select * from city WHERE id_city='${person.id_city}'">
                <field name="id_city" column="id_city" type="long" />
                <field name="name" column="name" type="string" />
-           </entity>
+           </entity>!-->
 	   </entity>
     </document>
 

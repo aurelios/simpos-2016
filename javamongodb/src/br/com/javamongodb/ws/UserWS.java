@@ -8,13 +8,14 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.net.UnknownHostException;
+import java.util.List;
 
 @Path("/personrest")
 @Produces(MediaType.APPLICATION_JSON)
 public class UserWS {
     
     @GET
-    public String WSChecarVersao() {
+    public List<String> WSChecarVersao() {
         MongoClient mongo = null;
         try {
             mongo = new MongoClient( "localhost" , 27017 );
@@ -22,7 +23,7 @@ public class UserWS {
             e.printStackTrace();
         }
         PersonDAO userDAO = new PersonDAO(mongo);
-        return userDAO.readAllUsers().toString();
+        return userDAO.readAllUsers();
 
     }
 }

@@ -11,9 +11,12 @@ import com.mongodb.MongoClient;
 public class PersonDAO {
     
     private DBCollection col;
+    MongoClient mongo;
 
     public PersonDAO(MongoClient mongo) {
+        this.mongo = mongo;
         this.col = mongo.getDB("admin").getCollection("person");
+
     }
    
     public List<String> readAllUsers() {
@@ -24,6 +27,8 @@ public class PersonDAO {
             DBObject doc = cursor.next();
             data.add(doc.toString());
         }
+        cursor.close();
+        mongo.close();
         return data;
     }
 }

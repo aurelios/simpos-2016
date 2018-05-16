@@ -77,7 +77,7 @@ function getPerson(callback){
 			console.log(err);
 			return callback(null);
 		}
-		var sql = "SELECT id_person, name, id_city FROM person where id_person < 500000 order by 1;"
+		var sql = "SELECT id_person, name, id_city FROM person ;"
 		connection.query(sql, function (err, result) {
 			connection.release();
 			//console.log(con._freeConnections.indexOf(connection));
